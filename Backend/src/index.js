@@ -10,7 +10,7 @@ const app = express();
 const port = 3000;
 const allowedOrigins = [
   'http://localhost:5173',
-  'https://fanciful-kashata-f074d4.netlify.app'
+  'https://gentle-malasada-4cb441.netlify.app'
 ];
 
 app.use(cors({

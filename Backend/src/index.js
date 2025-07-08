@@ -8,9 +8,21 @@ dotenv.config();
 
 const app = express();
 const port = 3000;
+const allowedOrigins = [
+  'http://localhost:5173',
+  'https://fanciful-kashata-f074d4.netlify.app'
+];
+
 app.use(cors({
-    origin:"http://localhost:5173"
-}))
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  }
+}));
+
 app.use(express.json()); // Middleware to parse JSON bodies
 
 app.use(express.urlencoded({ extended: true }));

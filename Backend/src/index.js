@@ -23,6 +23,8 @@ app.use(cors({
   }
 }));
 
+app.options('*', cors());
+
 app.use(express.json()); // Middleware to parse JSON bodies
 
 app.use(express.urlencoded({ extended: true }));

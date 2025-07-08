@@ -37,7 +37,7 @@ const containerVariants = {
         async function fetchTickets() {
         setLoading(true);
         try {
-            const res = await axios.get('http://localhost:3000/get_Tickets');
+            const res = await axios.get('https://ticketsupportsystem-rmo0.onrender.com/get_Tickets');
             setTicket(res.data);
         } catch (err) {
             console.log(err);

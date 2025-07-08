@@ -23,7 +23,7 @@ import { ArrowLeft } from 'lucide-react';
     useEffect(() => {
         async function fetchData() {
         try {
-            const res = await axios.get('http://localhost:3000/get_Tickets');
+            const res = await axios.get('https://ticketsupportsystem-rmo0.onrender.com/get_Tickets');
             const tickets = res.data || [];
 
             // Aggregate monthly data

@@ -52,7 +52,7 @@ const NewTickets = () => {
         }
 
         try {
-            await axios.post('http://localhost:3000/get_Tickets', {
+            await axios.post('https://ticketsupportsystem-rmo0.onrender.com/get_Tickets', {
                 Name, email, subject, priority, category, statas, description
             });
 

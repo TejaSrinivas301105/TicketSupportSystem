@@ -10,7 +10,7 @@ const DashBoard = () => {
     data.theme = 'caramellatte';
     const [ticket,settickets] = useState([]);
     useEffect(()=>{
-        axios.get('http://localhost:3000/get_Tickets')
+        axios.get('https://ticketsupportsystem-rmo0.onrender.com/get_Tickets')
             .then(res => settickets(res.data))
             .catch(err => console.error(err));
     },[])

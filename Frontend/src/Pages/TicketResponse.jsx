@@ -13,7 +13,7 @@ import { ArrowLeft } from 'lucide-react';
     useEffect(() => {
         const fetchTicketById = async () => {
         try {
-            const res = await axios.get(`http://localhost:3000/get_Tickets/${id}`);
+            const res = await axios.get(`https://ticketsupportsystem-rmo0.onrender.com/get_Tickets/${id}`);
             setTicket(res.data);
             setNewStatus(res.data.status);
         } catch (error) {
@@ -27,7 +27,7 @@ import { ArrowLeft } from 'lucide-react';
 
     const handleStatusUpdate = async () => {
         try {
-        await axios.put(`http://localhost:3000/get_Tickets/${id}/status`, {
+        await axios.put(`https://ticketsupportsystem-rmo0.onrender.com/get_Tickets/${id}/status`, {
             status: newStatus
         });
         toast.success('Status updated successfully!');

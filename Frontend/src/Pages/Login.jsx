@@ -9,7 +9,7 @@ const Login = () => {
     e.preventDefault()
     // Handle login logic here
     try {
-        const res = await axios.post('http://localhost:3000/Auth/login', form);
+        const res = await axios.post('https://ticketsupportsystem-rmo0.onrender.com/Auth/login', form);
         localStorage.setItem('token', res.data.token);
         toast.success('Login Successful');
         navigate('/DashBoard');

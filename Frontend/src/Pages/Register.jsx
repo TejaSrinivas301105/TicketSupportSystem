@@ -23,7 +23,7 @@ const Register = () => {
       return
     }
     try {
-            await axios.post('http://localhost:3000/Auth/signup', formData);
+            await axios.post('https://ticketsupportsystem-rmo0.onrender.com/Auth/signup', formData);
             toast.success('Registered Successfully!');
             navigate('/login');
         } catch (e) {

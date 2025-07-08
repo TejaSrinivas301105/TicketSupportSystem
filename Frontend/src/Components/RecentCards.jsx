@@ -8,7 +8,7 @@ const RecentCards = () => {
     useEffect(() => {
         async function fetchRecent() {
             try {
-                const res = await axios.get('http://localhost:3000/get_Tickets');
+                const res = await axios.get('https://ticketsupportsystem-rmo0.onrender.com/get_Tickets');
                 const sorted = res.data
                     .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
                     .slice(0, 4); 

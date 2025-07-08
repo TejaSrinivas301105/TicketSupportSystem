@@ -8,20 +8,14 @@ dotenv.config();
 
 const app = express();
 const port = 3000;
-const allowedOrigins = [
-  'http://localhost:5173',
-  'https://graceful-mooncake-f9b332.netlify.app'
-];
-
 app.use(cors({
-  origin: function (origin, callback) {
-    if (!origin || allowedOrigins.includes(origin)) {
-      callback(null, true);
-    } else {
-      callback(new Error('Not allowed by CORS'));
-    }
-  }
+  origin: ['https://graceful-mooncake-f9b332.netlify.app', 'http://localhost:5173'],
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true
 }));
+
+// Preflight support
+app.options('*', cors());
 
 
 app.use(express.json()); // Middleware to parse JSON bodies

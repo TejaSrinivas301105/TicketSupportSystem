@@ -1,5 +1,5 @@
 import React from 'react'
-import {useRoutes} from 'react-router'
+import {useRoutes,Navigate} from 'react-router'
 import DashBoard from './Pages/DashBoard'
 import Tickets from './Pages/Tickets'
 import NewTickets from './Pages/NewTickets'
@@ -14,6 +14,10 @@ const App = () => {
 
   function CustomRoutes(){
     const elements = useRoutes([
+      {
+        path: '/',
+        element: <Navigate to="/Login" />
+      },
       {
         path:'/DashBoard',
         element:<ProtectedRoute>
